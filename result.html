@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ATS Score and Review</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <style>
+        .header, .footer {
+            background-color: #343a40;
+            color: #ffffff;
+            padding: 10px 0;
+            text-align: center;
+        }
+        .logo {
+            max-height: 50px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <img src="{{ url_for('static', filename='images/resume-logo.png') }}" alt="Resume Reviewer Logo" class="logo">
+        <h1>Resume Reviewer</h1>
+    </div>
+
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="card">
+                    <div class="card-header text-center">
+                        <h2>ATS Score and Detailed Review</h2>
+                    </div>
+                    <div class="card-body">
+                        <h4>ATS Score</h4>
+                        <p>{{ ats_score }}</p>
+                        <h4>Skills Analysis</h4>
+                        <p>{{ skills_review }}</p>
+                        <h4>Experience Analysis</h4>
+                        <p>{{ experience_review }}</p>
+                        <h4>Present Skills</h4>
+                        <p>{{ ', '.join(present_skills) }}</p>
+                        <h4>Required Skills</h4>
+                        <p>{{ ', '.join(required_skills) }}</p>
+                        <h4>Suggestions for Improvement</h4>
+                        <p>{{ suggestions }}</p>
+                        <a href="/" class="btn btn-primary btn-block">Upload Another Resume</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>&copy; 2024 Resume Reviewer. All rights reserved.</p>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
